@@ -38,6 +38,7 @@
 		3F323B3715759CA000B0CA39 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F323B3615759CA000B0CA39 /* MainViewController.m */; };
 		3F323B3915759CA000B0CA39 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F323B3815759CA000B0CA39 /* MainViewController.xib */; };
 		3F323B3D15759CA000B0CA39 /* verify.sh in Resources */ = {isa = PBXBuildFile; fileRef = 3F323B3C15759CA000B0CA39 /* verify.sh */; };
+		3F323B441575A02000B0CA39 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 3F323B431575A02000B0CA39 /* www */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,10 +56,10 @@
 		3F323AFF15759C9F00B0CA39 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3F323B0115759C9F00B0CA39 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		3F323B0315759C9F00B0CA39 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		3F323B0715759C9F00B0CA39 /* AVFDemo-Info.plist */ = {isa = PBXFileReference; path = "AVFDemo-Info.plist"; sourceTree = "<group>"; };
+		3F323B0715759C9F00B0CA39 /* AVFDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AVFDemo-Info.plist"; sourceTree = "<group>"; };
 		3F323B0915759C9F00B0CA39 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3F323B0B15759C9F00B0CA39 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3F323B0D15759C9F00B0CA39 /* AVFDemo-Prefix.pch */ = {isa = PBXFileReference; path = "AVFDemo-Prefix.pch"; sourceTree = "<group>"; };
+		3F323B0D15759C9F00B0CA39 /* AVFDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AVFDemo-Prefix.pch"; sourceTree = "<group>"; };
 		3F323B0E15759C9F00B0CA39 /* Cordova.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cordova.framework; path = /Users/Shared/Cordova/Frameworks/Cordova.framework; sourceTree = "<absolute>"; };
 		3F323B1315759C9F00B0CA39 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3F323B1715759C9F00B0CA39 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = Resources/es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -71,13 +72,14 @@
 		3F323B2B15759C9F00B0CA39 /* Default@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x~iphone.png"; path = "Resources/splash/Default@2x~iphone.png"; sourceTree = "<group>"; };
 		3F323B2D15759CA000B0CA39 /* Capture.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Capture.bundle; path = Resources/Capture.bundle; sourceTree = "<group>"; };
 		3F323B2F15759CA000B0CA39 /* Cordova.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Cordova.plist; sourceTree = "<group>"; };
-		3F323B3215759CA000B0CA39 /* AppDelegate.h */ = {isa = PBXFileReference; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
+		3F323B3215759CA000B0CA39 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
 		3F323B3315759CA000B0CA39 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = "<group>"; };
-		3F323B3515759CA000B0CA39 /* MainViewController.h */ = {isa = PBXFileReference; name = MainViewController.h; path = Classes/MainViewController.h; sourceTree = "<group>"; };
+		3F323B3515759CA000B0CA39 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Classes/MainViewController.h; sourceTree = "<group>"; };
 		3F323B3615759CA000B0CA39 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Classes/MainViewController.m; sourceTree = "<group>"; };
 		3F323B3815759CA000B0CA39 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainViewController.xib; path = Classes/MainViewController.xib; sourceTree = "<group>"; };
-		3F323B3B15759CA000B0CA39 /* README */ = {isa = PBXFileReference; name = README; path = Plugins/README; sourceTree = "<group>"; };
+		3F323B3B15759CA000B0CA39 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; name = README; path = Plugins/README; sourceTree = "<group>"; };
 		3F323B3C15759CA000B0CA39 /* verify.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = verify.sh; sourceTree = "<group>"; };
+		3F323B431575A02000B0CA39 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		3F323AD915759C9F00B0CA39 = {
 			isa = PBXGroup;
 			children = (
+				3F323B431575A02000B0CA39 /* www */,
 				3F323B0515759C9F00B0CA39 /* AVFDemo */,
 				3F323AEA15759C9F00B0CA39 /* Frameworks */,
 				3F323AE815759C9F00B0CA39 /* Products */,
@@ -329,6 +332,7 @@
 				3F323B3015759CA000B0CA39 /* Cordova.plist in Resources */,
 				3F323B3915759CA000B0CA39 /* MainViewController.xib in Resources */,
 				3F323B3D15759CA000B0CA39 /* verify.sh in Resources */,
+				3F323B441575A02000B0CA39 /* www in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
