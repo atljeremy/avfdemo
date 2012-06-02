@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title></title>
+  <title>AVF Demo</title>
   
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<meta charset="utf-8">
 
-    <link href="css/jquery.mobile-1.1.0.min.css" rel="stylesheet" type="text/css">
+  <link href="css/jquery.mobile-1.1.0.min.css" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" media="all and (max-device-width: 480px)" href="css/iphone.css"> 
+  <link rel="stylesheet" media="all and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)" href="css/ipad-portrait.css"> 
+  <link rel="stylesheet" media="all and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)" href="css/ipad-landscape.css"> 
+  <link rel="stylesheet" media="all and (min-device-width: 1025px)" href="css/ipad-landscape.css"> 
         
 	<!-- iPad/iPhone specific css below, add after your main css >
 	<link rel="stylesheet" media="only screen and (max-device-width: 1024px)" href="ipad.css" type="text/css" />		
@@ -14,9 +19,9 @@
 	-->
 	<!-- If your application is targeting iOS BEFORE 4.0 you MUST put json2.js from http://www.JSON.org/json2.js into your www directory and include it here -->
 	<script type="text/javascript" charset="utf-8" src="js/cordova-1.7.0.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/jquery-1.7.2.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.1.0.min.js"></script>
-    <script type="text/javascript">
+  <script type="text/javascript" charset="utf-8" src="js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.1.0.min.js"></script>
+  <script type="text/javascript">
 
 
 	// If you want to prevent dragging, uncomment this section
@@ -53,19 +58,43 @@
 		//navigator.notification.alert("Cordova is working")
 	}
     
-    </script>
+  </script>
   </head>
-  <body onload="onBodyLoad()">
+  <body onload="onBodyLoad()" data-responsejs='{
+    "create": [
+    { "breakpoints": [0,320,481,641,961,1025,1281], "mode": "src", "prefix": "src" }, 
+    { "breakpoints": [0,320,481,641,961,1025,1281], "mode": "markup", "prefix": "r" }
+    ]}'
+  >
       <div data-role="page">
           
           <div data-role="header">
-              <h1>My Title</h1>
+              <h1>AVF Demo</h1>
           </div><!-- /header -->
           
           <div data-role="content">	
-              <p>Hello world</p>		
-          </div><!-- /content -->
+                  
+            <div class="contentDiv">
+              <h3 class="titleText">CRUD Apps</h3>
+                <div data-role="button">BillPlanner GitHub Repo</div>
+                <div data-role="button">BillPlanner Live Code</div>
+            </div>
           
+            <div class="contentDiv">
+              <h3 class="titleText">iOS/Android Native Feature Demos</h3>
+                <div data-role="button">Alert (Coming Soon)</div>
+                <div data-role="button">Geo (Coming Soon)</div>
+            </div>
+          
+            <div class="contentDiv">
+              <h3 class="titleText">Developer Info</h3>
+              <ul class="moveUp listNone">
+                <li>Name: Jeremy Fox</li>
+                <li>Course: AVF1206</li>
+              </ul>
+            </div>
+              
+          </div><!-- /content -->
       </div><!-- /page -->
   </body>
 </html>
