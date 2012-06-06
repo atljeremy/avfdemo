@@ -6,6 +6,12 @@
   list-style: none;
 }
 
+.cta{
+    width: 100%;
+    height: 125px;
+    margin-bottom: 10px;
+}
+
 .contentDiv{
   background: white;
   border: 1px;

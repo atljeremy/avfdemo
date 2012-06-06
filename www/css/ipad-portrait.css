@@ -6,19 +6,13 @@
   list-style: none;
 }
 
-.contentDiv{
-  background: white;
-  border: 1px;
-  border-color: #AAAAAA;
-  border-style: solid;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  float: none;
+.cta{
+    width: 100%;
+    height: 300px;
+    margin-bottom: 10px;
 }
 
-.min-width-480px .contentDiv{
+.contentDiv{
   background: white;
   border: 1px;
   border-color: #AAAAAA;
