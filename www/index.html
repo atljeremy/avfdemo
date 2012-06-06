@@ -4,7 +4,7 @@
   <title>AVF Demo</title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<meta charset="utf-8">
+  <meta charset="utf-8">
 
   <link href="css/jquery.mobile-1.1.0.min.css" rel="stylesheet" type="text/css">
   
@@ -12,26 +12,22 @@
   <link rel="stylesheet" media="all and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)" href="css/ipad-portrait.css"> 
   <link rel="stylesheet" media="all and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)" href="css/ipad-landscape.css"> 
   <link rel="stylesheet" media="all and (min-device-width: 1025px)" href="css/ipad-landscape.css"> 
-        
-	<!-- iPad/iPhone specific css below, add after your main css >
-	<link rel="stylesheet" media="only screen and (max-device-width: 1024px)" href="ipad.css" type="text/css" />		
-	<link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="iphone.css" type="text/css" />		
-	-->
-	<!-- If your application is targeting iOS BEFORE 4.0 you MUST put json2.js from http://www.JSON.org/json2.js into your www directory and include it here -->
-	<script type="text/javascript" charset="utf-8" src="js/cordova-1.7.0.js"></script>
+  <link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
+
+  <!-- If your application is targeting iOS BEFORE 4.0 you MUST put json2.js from http://www.JSON.org/json2.js into your www directory and include it here -->
+  <script type="text/javascript" charset="utf-8" src="js/cordova-1.7.0.js"></script>
   <script type="text/javascript" charset="utf-8" src="js/jquery-1.7.2.min.js"></script>
   <script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.1.0.min.js"></script>
+  <script src="http://vjs.zencdn.net/c/video.js"></script>
   <script type="text/javascript">
 
 
 	// If you want to prevent dragging, uncomment this section
-	/*
 	function preventBehavior(e) 
 	{ 
       e.preventDefault(); 
     };
 	document.addEventListener("touchmove", preventBehavior, false);
-	*/
 	
 	/* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
 	see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
@@ -60,12 +56,7 @@
     
   </script>
   </head>
-  <body onload="onBodyLoad()" data-responsejs='{
-    "create": [
-    { "breakpoints": [0,320,481,641,961,1025,1281], "mode": "src", "prefix": "src" }, 
-    { "breakpoints": [0,320,481,641,961,1025,1281], "mode": "markup", "prefix": "r" }
-    ]}'
-  >
+  <body onload="onBodyLoad()">
       <div data-role="page">
           
           <div data-role="header">
@@ -73,7 +64,14 @@
           </div><!-- /header -->
           
           <div data-role="content">	
-                  
+            
+            <div class="cta">
+              <video id="ctaVideo" class="video-js vjs-default-skin" controls preload="auto" width="100%" height="100%" poster="media/avf-demo-poster.png" onclick="this.play();">
+                <source src="media/avf-demo.mp4" type='video/mp4'>
+                <source src="media/avf-demo.WebM" type='video/webm'>
+              </video>
+            </div>
+              
             <div class="contentDiv">
               <h3 class="titleText">CRUD Apps</h3>
                 <a href="https://github.com/atljeremy/Bill-Planner"><div data-role="button">BillPlanner GitHub Repo</div></a>
