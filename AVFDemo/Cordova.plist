@@ -21,7 +21,12 @@
 	<key>OpenAllWhitelistURLsInWebView</key>
 	<false/>
 	<key>ExternalHosts</key>
-	<array/>
+	<array>
+		<string>*.*.akamai.net</string>
+		<string>*.e.akamai.net</string>
+		<string>a248.e.akamai.net</string>
+		<string>*</string>
+	</array>
 	<key>Plugins</key>
 	<dict>
 		<key>Compass</key>

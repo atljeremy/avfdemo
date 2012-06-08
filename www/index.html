@@ -12,48 +12,26 @@
   <link rel="stylesheet" media="all and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)" href="css/ipad-portrait.css"> 
   <link rel="stylesheet" media="all and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)" href="css/ipad-landscape.css"> 
   <link rel="stylesheet" media="all and (min-device-width: 1025px)" href="css/ipad-landscape.css"> 
-  <link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
+  <link href="css/video.css" rel="stylesheet">
 
-  <!-- If your application is targeting iOS BEFORE 4.0 you MUST put json2.js from http://www.JSON.org/json2.js into your www directory and include it here -->
   <script type="text/javascript" charset="utf-8" src="js/cordova-1.7.0.js"></script>
   <script type="text/javascript" charset="utf-8" src="js/jquery-1.7.2.min.js"></script>
   <script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.1.0.min.js"></script>
-  <script src="http://vjs.zencdn.net/c/video.js"></script>
+  <script type="text/javascript" charset="utf-8" src="js/video.js"></script>
+  <script type="text/javascript" charset="utf-8" src="js/avf-demo-main.js"></script>
+
   <script type="text/javascript">
-
-
-	// If you want to prevent dragging, uncomment this section
-    /*
-	function preventBehavior(e) 
-	{ 
-      e.preventDefault(); 
-    };
-	document.addEventListener("touchmove", preventBehavior, false);
-	*/
-      
-	/* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
-	see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
-	for more details -jm */
-	/*
-	function handleOpenURL(url)
-	{
-		// TODO: do something with the url passed in.
-	}
-	*/
 	
 	function onBodyLoad()
 	{		
 		document.addEventListener("deviceready", onDeviceReady, false);
 	}
 	
-	/* When this function is called, Cordova has been initialized and is ready to roll */
-	/* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
-	see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
-	for more details -jm */
 	function onDeviceReady()
 	{
-		// do your thing!
 		//navigator.notification.alert("Cordova is working")
+		
+		getNavigator(navigator);
 	}
     
   </script>
@@ -82,8 +60,9 @@
           
             <div class="contentDiv">
               <h3 class="titleText">iOS/Android Native Feature Demos</h3>
-                <div data-role="button">Alert (Coming Soon)</div>
-                <div data-role="button">Geo (Coming Soon)</div>
+                <div data-role="button" id="notification">Notification</div>
+                <div data-role="button" id="geolocation">Geolocation</div>
+                <div id="geolocationDiv"></div>
             </div>
           
             <div class="contentDiv">
