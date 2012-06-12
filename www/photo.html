@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AVF Demo</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8">
+
+    <link href="css/jquery.mobile-1.1.0.min.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" media="all and (max-device-width: 480px)" href="css/iphone.css">
+    <link rel="stylesheet" media="all and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)" href="css/ipad-portrait.css">
+    <link rel="stylesheet" media="all and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)" href="css/ipad-landscape.css">
+    <link rel="stylesheet" media="all and (min-device-width: 1025px)" href="css/ipad-landscape.css">
+    <link href="css/video.css" rel="stylesheet">
+
+    <script type="text/javascript" charset="utf-8" src="js/cordova-1.8.0.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.1.0.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/video.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/avf-demo-main.js"></script>
+</head>
+<body>
+<div data-role="page" data-add-back-btn="true" id="photoPage">
+
+    <div data-role="header">
+        <h1>AVF Demo</h1>
+    </div><!-- /header -->
+
+    <div data-role="content">
+        <button id="capturePhoto">Capture Photo</button>
+        <button id="capturePhotoEdit">Capture Editable Photo</button>
+        <button id="getPhotoLibrary">From Photo Library</button>
+        <button id="getPhotoAlbum">From Photo Album</button>
+        <img id="smallImage" src="" />
+        <img id="largeImage" src="" />
+    </div>
+
+</div>
+</body>
+</html>
