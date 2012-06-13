@@ -8,9 +8,56 @@
 //*********************************************************************
 // CONTACTS
 //*********************************************************************
-var contactsBtn = $('#notification');
-contactsBtn.live('live', function(){
+var options;
+var fields = ["displayName", "name"];
+var contactName;
+
+$('#contactsPage').live('pageshow', function(event, ui){
     
+    // Uncomment For Debugging
+    // alert("FIND CONTACT PAGE READY");
+    
+    options = new ContactFindOptions();
+    contactsName = $("#contactName");
+});
+
+function findContactOnSuccess(contacts) {
+    
+    if (contacts.length > 0) {
+        for (var i=0; i<contacts.length; i++) {
+            $("#contactsDiv").append("Display Name = " + contacts[i].displayName);
+        }
+    } else {
+        navigator.notification.alert(
+            'No Contacts Found For: ' + options.filter,
+            focusTextField,
+            'Sorry',
+            'Ok'
+        );
+    }
+}
+
+function findContactOnError(contactError) {
+    
+    alert('Sorry! An Error has occurred. ' + contactError);
+}
+
+function focusTextField(){
+    contactName.click();
+}
+
+$('#findContact').live('click', function() {
+    options.filter = contactName.val();
+    if (options.filter != null || options.filter != ""){
+        navigator.contacts.find(fields, findContactOnSuccess, findContactOnError, options);
+    } else {
+        navigator.notification.alert(
+            'Please enter a name to search for contacts.',
+            focusTextField,
+            'Oops!',
+            'Ok'
+        );
+    }
 });
 
 //*********************************************************************
@@ -20,7 +67,10 @@ var pictureSource;
 var destinationType;
 
 $('#photoPage').live('pageshow', function(event, ui){
-    alert("PHOTOS PAGE IS READY!!!!!!!!!!!!!");
+
+    // Uncomment For Debugging
+    // alert("PHOTO PAGE IS READY!");
+
     pictureSource=navigator.camera.PictureSourceType;
     destinationType=navigator.camera.DestinationType;
 });
@@ -40,19 +90,19 @@ function onPhotoURISuccess(imageURI) {
 }
 
 var capturePhoto = function() {
-    alert("CAPTURE PHOTO");
+
     navigator.camera.getPicture(onPhotoDataSuccess, photosOnFail, { quality: 50,
         destinationType: destinationType.DATA_URL });
 }
 
 var capturePhotoEdit = function() {
-    alert("CAPTURE PHOTO EDIT");
+
     navigator.camera.getPicture(onPhotoDataSuccess, photosOnFail, { quality: 20, allowEdit: true,
         destinationType: destinationType.DATA_URL });
 }
 
 var getPhoto = function(source) {
-    alert("GET PHOTO + SOURCE: " + source);
+
     navigator.camera.getPicture(onPhotoURISuccess, photosOnFail, { quality: 50,
         destinationType: destinationType.FILE_URI,
         sourceType: source });
@@ -87,7 +137,7 @@ notificationBtn.live('click', function(){
     
     navigator.notification.alert(
     'You are the winner!',  // message
-    alertDismissed(),         // callback
+    alertDismissed(),       // callback
     'Game Over',            // title
     'Done'                  // buttonName
     );
@@ -96,11 +146,15 @@ notificationBtn.live('click', function(){
 //*********************************************************************
 // GEOLOCATION
 //*********************************************************************
-var geolocationBtn = $('#geolocation');
+$('#geolocationPage').live('pageshow', function(event, ui){
+
+    // Uncomment For Debugging
+    // alert("GEOLOCATION PAGE IS READY!");
+});
 
 var geoOnSuccess = function(position) {
     var geolocationDiv = $('#geolocationDiv');
-    geolocationDiv.append( 'Latitude: '           + position.coords.latitude              + '<br />' +
+    geolocationDiv.append( 'Latitude: ' + position.coords.latitude + '<br />' +
     'Longitude: '          + position.coords.longitude             + '<br />' +
     'Altitude: '           + position.coords.altitude              + '<br />' +
     'Accuracy: '           + position.coords.accuracy              + '<br />' +
@@ -116,6 +170,6 @@ var geoOnError = function(error) {
     'message: ' + error.message + '\n');
 }
 
-geolocationBtn.live('click', function(){
+$('#geolocation').live('click', function(){
     navigator.geolocation.getCurrentPosition(geoOnSuccess, geoOnError, { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
 });
