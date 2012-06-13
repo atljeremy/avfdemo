@@ -11,14 +11,22 @@
 var options;
 var fields = ["displayName", "name", "phoneNumbers"];
 var contactName;
+var newContactName;
+var newContactDisplayName;
+var newContactNote;
+var newContactPhone;
 
 $('#contactsPage').live('pageshow', function(event, ui){
     
     // Uncomment For Debugging
     // alert("FIND CONTACT PAGE READY");
     
-    options = new ContactFindOptions();
-    contactsName = $("#contactInput");
+    options               = new ContactFindOptions();
+    contactsName          = $("#contactInput");
+    newContactName        = $("#createContactInput");
+    newContactDisplayName = $("#createContactDisplayName");
+    newContactNote        = $("#createContactNote");
+    newContactPhone       = $("#createContactPhone");
 });
 
 function focusTextField(){
@@ -84,6 +92,53 @@ $('#findContact').live('click', function() {
         );
     }
 });
+
+// STORE A CONTACT ***************************************
+var focusNewContactNameField = function(){
+    newContactName.focus();
+}
+
+var newContactSuccess = function(){
+    navigator.notification.alert(
+        'Contact Added Successfully!',
+        focusNewContactNameField,
+        'Success',
+        'Ok'
+    );
+}
+
+var newContactError = function(error){
+    navigator.notification.alert(
+        'Contact could not be saved. ' + error,
+        focusNewContactNameField,
+        'Error',
+        'Ok'
+    );
+}
+
+$('#createContact').live('click', function() {
+                         
+    if (newContactName.val()        == "" ||
+        newContactDisplayName.val() == "" ||
+        newContactNote.val()        == "" ||
+        newContactPhone.val()       == "") {
+
+        navigator.notification.alert(
+            'All fields are required.',
+            focusNewContactNameField,
+            'Error',
+            'Ok'
+        );
+    } else {
+        var myContact = navigator.contacts.create({
+            "name"        : newContactName.val(),
+            "displayName" : newContactDisplayName.val(),
+            "note"        : newContactNote.val(),
+            "phoneNumbers": [ new ContactField('default', newContactPhone.val(), 'true' ) ]
+        });
+        myContact.save(newContactSuccess, newContactError);
+    }
+ });
 
 //*********************************************************************
 // CAMERAS/PHOTOS
@@ -195,6 +250,6 @@ var geoOnError = function(error) {
     'message: ' + error.message + '\n');
 }
 
-$('#geolocation').live('click', function(){
+$('#geolocationBtn').live('click', function(){
     navigator.geolocation.getCurrentPosition(geoOnSuccess, geoOnError, { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
 });

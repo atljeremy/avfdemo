@@ -22,19 +22,36 @@
 
 </head>
 <body>
-<div data-role="page" data-add-back-btn="true" id="contactsPage">
+    <div data-role="page" data-add-back-btn="true" id="contactsPage">
 
-    <div data-role="header">
-        <h1>AVF Demo</h1>
-    </div><!-- /header -->
+        <div data-role="header">
+            <h1>AVF Demo</h1>
+        </div><!-- /header -->
 
-    <div data-role="content">
-        <label for="contactName">Find A Contact:</label>
-        <input type="text" id="contactInput" name="contactName" placeholder="Contacts First Name" />
-        <button id="findContact">Find Contact</button>
-        <div id="contactsDiv"></div>
+        <div data-role="content">
+            <!-- CREATE CONTACT -->
+            <label for="createContactInput">Create A Contact:</label>
+            <input type="text" id="createContactInput" name="createContactInput" placeholder="Johnny Smith" />
+            
+            <label for="createContactDisplayName">Contact Display Name:</label>
+            <input type="text" id="createContactDisplayName" name="createContactDisplayName" placeholder="John S." />
+            
+            <label for="createContactNote">Contact Note:</label>
+            <input type="text" id="createContactNote" name="createContactNote" placeholder="VP of sales" />
+            
+            <label for="createContactPhone">Contact Phone:</label>
+            <input type="text" id="createContactPhone" name="createContactPhone" placeholder="123-654-8659" />
+            
+            <button id="createContact">Create Contact</button>
+            
+            <!-- FIND CONTACT -->
+            <label for="contactInput">Find A Contact:</label>
+            <input type="text" id="contactInput" name="contactName" placeholder="John Smith" />
+            
+            <button id="findContact">Find Contact</button>
+            <div id="contactsDiv"></div>
+        </div>
+
     </div>
-
-</div>
 </body>
 </html>
