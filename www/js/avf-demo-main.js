@@ -9,7 +9,7 @@
 // CONTACTS
 //*********************************************************************
 var options;
-var fields = ["displayName", "name"];
+var fields = ["displayName", "name", "phoneNumbers"];
 var contactName;
 
 $('#contactsPage').live('pageshow', function(event, ui){
@@ -30,7 +30,29 @@ function findContactOnSuccess(contacts) {
     
     if (contacts != null && contacts.length > 0) {
         for (var i=0; i<contacts.length; i++) {
-            $("#contactsDiv").append("Display Name = " + contacts[i].displayName);
+            var phones = (contacts[i].phoneNumbers != null ? contacts[i].phoneNumbers : "No Phone Numbers");
+
+            var setPhones = function(){
+                if (phones != null && typeof(phones) != "string" && phones.length >= 1) {
+                    
+                    var phoneStringToReturn = "";
+                        
+                        for (index in phones) {
+                            if (index == phones.length - 1) {
+                                phoneStringToReturn += phones[index].value;
+                            } else {
+                                phoneStringToReturn += phones[index].value + ", ";
+                            }
+                        }
+                    
+                    return phoneStringToReturn;
+                } else {
+                    return phones;
+                }
+            }
+            $("#contactsDiv").append("Name: "            + contacts[i].name.formatted     + " <br /> " +
+                                     "Phone Number(s): " + setPhones() + " <br /> " +
+                                     "<hr>");
         }
     } else {
         navigator.notification.alert(
@@ -50,6 +72,7 @@ function findContactOnError(contactError) {
 $('#findContact').live('click', function() {
                        
     options.filter = contactsName.val();
+    options.multiple = true;
     if (options.filter != null && options.filter.length > 0){
         navigator.contacts.find(fields, findContactOnSuccess, findContactOnError, options);
     } else {
