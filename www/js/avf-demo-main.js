@@ -18,12 +18,17 @@ $('#contactsPage').live('pageshow', function(event, ui){
     // alert("FIND CONTACT PAGE READY");
     
     options = new ContactFindOptions();
-    contactsName = $("#contactName");
+    contactsName = $("#contactInput");
 });
+
+function focusTextField(){
+
+    contactsName.focus();
+}
 
 function findContactOnSuccess(contacts) {
     
-    if (contacts.length > 0) {
+    if (contacts != null && contacts.length > 0) {
         for (var i=0; i<contacts.length; i++) {
             $("#contactsDiv").append("Display Name = " + contacts[i].displayName);
         }
@@ -42,13 +47,10 @@ function findContactOnError(contactError) {
     alert('Sorry! An Error has occurred. ' + contactError);
 }
 
-function focusTextField(){
-    contactName.click();
-}
-
 $('#findContact').live('click', function() {
-    options.filter = contactName.val();
-    if (options.filter != null || options.filter != ""){
+                       
+    options.filter = contactsName.val();
+    if (options.filter != null && options.filter.length > 0){
         navigator.contacts.find(fields, findContactOnSuccess, findContactOnError, options);
     } else {
         navigator.notification.alert(
