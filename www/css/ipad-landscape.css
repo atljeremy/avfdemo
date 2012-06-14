@@ -62,3 +62,13 @@ a{
 #largeImage {
     display: none;
 }
+
+/* CONTACTS SPECIFIC CSS */
+#createContactFirstName {
+    float: left;
+    width: 50%;
+}
+
+#createContactLastName {
+    width: 50%;
+}
