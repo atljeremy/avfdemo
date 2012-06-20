@@ -1,3 +1,31 @@
+.ui-body-c, .ui-overlay-c {
+  background: #000000 url(../media/bg.png);
+}
+
+.ui-header.ui-bar-a, .ui-footer.ui-bar-a {
+  border: 1px solid #333;
+  background: #DDD;
+  color: #222;
+  font-size: x-small;
+  font-weight: bold;
+  text-shadow: 0 -1px -1px #999;
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#FFF),to(#999));
+  background-image: -webkit-linear-gradient(#FFF,#999);
+  background-image: -moz-linear-gradient(#FFF,#999);
+  background-image: -ms-linear-gradient(#FFF,#999);
+  background-image: -o-linear-gradient(#FFF,#999);
+  background-image: linear-gradient(#FFF,#999);
+}
+
+h2, .ui-input-text {
+  color: #FFF;
+  line-height: 1.4;
+  display: block;
+  font-weight: normal;
+  margin: 0 0.3em;
+  text-shadow: 0 1px 0 #000;
+}
+
 a{
   text-decoration: none;
 }
@@ -53,10 +81,14 @@ a{
 /* CAMERA/PHOTO SPECIFIC CSS */
 #smallImage {
     display:none;
-    width:60px;
-    height:60px;
+    width:80px;
+    height:80px;
+    margin: 5px 10px;
 }
 
 #largeImage {
     display: none;
+    max-width: 768px;
+    max-height: 900px;
+    margin: 5px 10px;
 }
