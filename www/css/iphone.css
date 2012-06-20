@@ -92,3 +92,13 @@ a{
     max-height: 400px;
     margin: 5px 10px;
 }
+
+/* CONTACTS SPECIFIC CSS */
+#createContactFirstName {
+    float: left;
+    width: 50%;
+}
+
+#createContactLastName {
+    width: 50%;
+}
