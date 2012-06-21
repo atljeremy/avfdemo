@@ -17,7 +17,7 @@
   background-image: linear-gradient(#FFF,#999);
 }
 
-h2, .ui-input-text {
+h2, .ui-input-text, #geolocationDiv, #contactsDiv {
   color: #FFF;
   line-height: 1.4;
   display: block;
